@@ -1,5 +1,6 @@
 package state;
 
+import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -19,7 +20,7 @@ public class State {
 
         return Operation;
     }
-    public static int GAME_HEIGHT = 10;
+    public static int GAME_HEIGHT = 15;
     public static int GAME_WIDTH = 15;
     public static int  TARGET = GAME_HEIGHT * GAME_WIDTH * 9 / 2;
     public static int ATTEMPTS = 20;
