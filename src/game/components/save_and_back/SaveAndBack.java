@@ -68,15 +68,15 @@ public class SaveAndBack extends JButton implements ActionListener {
                 }
             }
         } else {
+            State.TARGET = Integer.parseInt(Components.TARGET_FIELD.getText());
+            State.ATTEMPTS = Integer.parseInt(Components.ATTEMPTS_FIELD.getText());
+
             State.SUM = 0;
             State.OPERATION = State.generateOperation(State.ATTEMPTS);
             Components.Buttons = new JButton[State.GAME_WIDTH][State.GAME_HEIGHT];
             Components.NEXT_OPERATION = new NextOperation();
             State.TARGET = Integer.parseInt(Components.TARGET_FIELD.getText());
             State.ATTEMPTS = Integer.parseInt(Components.ATTEMPTS_FIELD.getText());
-
-            Components.TARGET_BUTTON.setText(Integer.toString(State.TARGET));
-            Components.ATTEMPTS_BUTTON.setText(Integer.toString(State.ATTEMPTS));
 
             Container parent = this.getParent();
             Container grandParent = parent.getParent();
