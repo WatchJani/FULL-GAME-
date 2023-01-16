@@ -25,7 +25,21 @@ public class SaveAndBack extends JButton implements ActionListener {
         int odgovor = JOptionPane.showOptionDialog(null, "Zelite li sacuvati ovaj napredak?", "Potvrda", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
         if (odgovor == JOptionPane.YES_OPTION) {
 
-            String[] data = {""+State.GAME_WIDTH,""+State.GAME_HEIGHT,""+State.TARGET, ""+State.ATTEMPTS};
+            String gameSet = "";
+
+            for(int i=0; i< Components.Buttons.length; i++){
+                for(int k = 0; k < Components.Buttons[i].length; k++){
+                    gameSet+=Components.Buttons[i][k].getText();
+                }
+                    gameSet+="\n";
+            }
+
+            String SuperOperation = "";
+            for (int i = 0; i < State.OPERATION.size();i++){
+                SuperOperation+=State.OPERATION.get(i);
+            }
+
+            String[] data = {""+State.GAME_WIDTH,""+State.GAME_HEIGHT,""+State.TARGET, ""+State.ATTEMPTS, SuperOperation, gameSet};
             JFileChooser chooser = new JFileChooser();
             chooser.setDialogTitle("Save File");
             chooser.setApproveButtonText("Save");
